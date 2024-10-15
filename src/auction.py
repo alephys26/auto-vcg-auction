@@ -3,7 +3,7 @@ from result_outputter import ResultOutputter
 from processor import Processor
 
 
-class VCGAuction:
+class Auction:
     def __init__(self):
         self.input_handler = InputHandler()
         self.result_outputter = ResultOutputter()

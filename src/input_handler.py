@@ -5,7 +5,7 @@ class InputHandler:
         self.input = []
 
     def processFile(self, file) -> list[list[int, str, int]]:
-        lines = open(input_directory + file).readlines()
+        lines = open(InputHandler.input_directory + file).readlines()
         input = []
         for line in lines:
             bid_info = line.split(':')

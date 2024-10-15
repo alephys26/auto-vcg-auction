@@ -1,10 +1,10 @@
-from vcg_auction import VCGAuction
+from auction import Auction
 from argparse import ArgumentParser
 
 
 def run(cases):
     print(f"Cases to run: {cases}")
-    vcg = VCGAuction()
+    auc = Auction()
 
 
 def parse_args():
