@@ -1,5 +1,5 @@
 class InputHandler:
-    input_directory = "..\\input\\"
+    input_directory = "../input/"
 
     def __init__(self):
         self.input = []
@@ -17,37 +17,37 @@ class InputHandler:
     def clear(self):
         self.input = []
 
-    def getTopBannerBids(self) -> dict[int, int]:
+    def getTopBannerBids(self) -> list[tuple[int, int]]:
         if not self.input:
             raise ValueError(
                 "No Input. Provide Input file or run processFile.")
-        top_bids = {}
+        top_bids = []
         for i in self.input:
             if i[1] == 't' or i[1] == 'T':
-                top_bids[i[0]] = i[2]
-        return dict(sorted(top_bids.items(), key=lambda item: item[1], reverse=True))
+                top_bids.append((i[0], i[2]))
+        return sorted(top_bids, key=lambda item: item[1], reverse=True)
 
-    def getSideBannerBids(self) -> dict[int, int]:
+    def getSideBannerBids(self) -> list[tuple[int, int]]:
         if not self.input:
             raise ValueError(
                 "No Input. Provide Input file or run processFile.")
-        side_bids = {}
+        side_bids = []
         for i in self.input:
             if i[1] == 's' or i[1] == 'S':
-                side_bids[i[0]] = i[2]
-        return dict(sorted(side_bids.items(), key=lambda item: item[1], reverse=True))
+                side_bids.append((i[0], i[2]))
+        return sorted(side_bids, key=lambda item: item[1], reverse=True)
 
-    def getBothBannerBids(self) -> dict[int, int]:
+    def getBothBannerBids(self) -> list[tuple[int, int]]:
         if not self.input:
             raise ValueError(
                 "No Input. Provide Input file or run processFile.")
-        both_bids = {}
+        both_bids = []
         for i in self.input:
             if i[1] == 'b' or i[1] == 'B':
-                both_bids[i[0]] = i[2]
-        return dict(sorted(both_bids.items(), key=lambda item: item[1], reverse=True))
+                both_bids.append((i[0], i[2]))
+        return sorted(both_bids, key=lambda item: item[1], reverse=True)
 
-    def getBids(self) -> dict[str, dict[int, int]]:
+    def getBids(self) -> dict[str, list[tuple[int, int]]]:
         bids = {}
         bids['t'] = self.getTopBannerBids()
         bids['s'] = self.getSideBannerBids()
