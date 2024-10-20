@@ -29,7 +29,7 @@ class Processor:
             winners = {'b': [bids['b'][0][0], bids['b'][0][1]]}
         return winners
 
-    def __getVCGPayments(self, bids, winners):
+    def __getVCGPayments(self, bids: dict, winners: dict):
         payments = {}
         for bidder in winners:
             remaining_bids = copy.deepcopy(bids)
@@ -40,7 +40,9 @@ class Processor:
             if actual_revenue_without_bidder == None:
                 actual_revenue_without_bidder = 0
             external_revenue = sum([i[1][1] for i in new_winners.items()])
-            payments[bidder] = external_revenue - actual_revenue_without_bidder
+            payments[bidder] = external_revenue 
+            if len(winners.keys()) == len(new_winners.keys()):
+                payments[bidder] -= actual_revenue_without_bidder
         return payments
 
     def secondBid(self, bids):
