@@ -16,9 +16,9 @@ class Auction:
         bids = self.input_handler.getBids()
         return bids
 
-    def processBids(self, bids):
+    def processBids(self, bids, case):
         pass
 
     def run(self, case):
         bids = self.getInput(case)
-        self.processBids(bids)
+        self.processBids(bids, case)

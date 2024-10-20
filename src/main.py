@@ -23,7 +23,7 @@ def main():
     if args.cases is None or len(args.cases) == 0:
         print("No cases provided. Running all cases by default.")
         # Example: Replace with actual default cases
-        all_cases = [1, 2, 3, 4, 5]
+        all_cases = [1, 2, 3]
         run(all_cases)
     else:
         run(args.cases)
