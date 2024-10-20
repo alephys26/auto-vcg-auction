@@ -5,7 +5,7 @@ class ResultOutputter:
         pass
 
     def write(self, auction_type, case, bids, winner):
-        outfile = open(ResultOutputter.results_directory+f"a{case}.txt", "w")
+        outfile = open(ResultOutputter.results_directory+f"a{case}{auction_type}.txt", "w")
         outfile.write('=================================================\n')
         auc_type = "VCG"
         if auction_type == "s":
@@ -21,7 +21,7 @@ class ResultOutputter:
         outfile.write('\n=================================================\n')
         outfile.close()
         print(
-            f"Please open the file {ResultOutputter.results_directory}a{case}.txt to view the results.")
+            f"Please open the file {ResultOutputter.results_directory}a{case}{auction_type}.txt to view the results.")
 
     def __write_dict(self, di)->str:
         s = ""

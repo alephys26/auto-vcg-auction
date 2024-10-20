@@ -2,43 +2,17 @@
 ## IIT Jodhpur | CSL7560: Autnomous Systems
 ## Course Assignment 2: A VCG Auction mechanism simulation 
 
-The **main** branch is secured and no commits can be pushed to it without raising a Pull Request which is also approved by anyone of the collaborators. So create a new branch for any new task and raise a PR for it and wait for approval.
-## Branch Name Instructions  
-Format: **Bx__Task**  
-where  
-- _x_ is 1 for Shrivastava, 2 for Anshu, 3 for Manan, 4 for Mangal.  
-- _Task_ is the task title. If it has multiple words kindly write them separated by underscores and in capital case.
-  
-
-For example, Yash creates a branch for readme filling through which this readme is created, then the branch is named ***B1__Initial_Readme_Updates***.  
-As a good practice, remember to keep two underscores after _Bx_ and single underscore for each word in task as shown in above example.  
-So, the command for creating the branch will be of the form  
-`git branch "Bx__Task"`  
-To switch to this branch, use  
-`git checkout "Bx__Task"`  
-To do the above two actions together in a single command   
-`git checkout -b "Bx__Task"`  
-
-## Commit Instructions  
-The commit message format should be  The commits should have a message of the form ***Bx__Task: Description*** or ***BranchName: Description*** where _Description_ is in  
-1. Present Tense and Imperative Mood
-2. Tells what eactly has been done in the commit  
-So that the task done is clear and the branch is clear. Remember to keep the message tense in imperative mood.  
-For example, **git commit -m "B1__Initial_ReadMe_Updates: ReadMe has Instructions"**  
-
-## Pull Request Instructions  
-The **main** branch is protected and requires at least one approving review on a pull request to push changes to it.  
-Try to keep each PR to at *max 150 lines* of code.  
-To push your branch, use  
-`git push origin HEAD` or `git push origin "Bx__Task"`  
-Make multiple PRs for the same task if it exceeds the above limit. Do not change the branch name to a new branch name for the same task. The branch will get deleted on remote after merging but on local it can be kept safe or a fresh branch with the old name can be made.  
-
-## Other Instructions
-Use **autopep8** formatter for code formatting with tab = 4 spaces and UTF-8 encoding.  
-Prefer loops over lambda functions.  
-Use array comprehension for simple tasks.  
+The assignment runs to simulate VCG Auctions and Second Bid Auctions.  
+The input format is a text file stored in the _input_ folder. The format of bids is  
+`bidder_id:banner_position:bid_value`  
+It can be seen in the available example files in the _input_ folder.  
+To run the simulations, run the script __main.py__ in the src folder, using the following command set:  
+```
+cd src\
+python3 main.py
+```
+This will run all the cases from a1.txt to a7.txt present in the folder _input_ in both VCG and Second Bid Mechanism and the results will be stored in the results folder in the format a1v.txt or a1s.txt for input a1.txt in VCG and second bid mechanism respectively.  
+If you want to run a specific file or case in input folder. Make the file named as a{some integer value}.txt for exampe a16.txt. Populate it with the bids in the aforementioned format. Then run it using `python3 main.py 16v` for VCG and `python3 main.py 16s` for second bid or `python3 main.py 16v 16s` for running both the cases.   
 
 > _Yash Shrivastava, B21CS079_  
-  _Anshu Raj, B21AI048_  
-  _Manan Jain, B21AI021_  
   _Yash Mangal, B21AI047_  

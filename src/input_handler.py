@@ -4,20 +4,19 @@ class InputHandler:
     def __init__(self):
         self.input = []
 
-    def processFile(self, file) -> list[list[int, str, int]]:
+    def processFile(self, file) -> list[list[str, str, float]]:
         lines = open(InputHandler.input_directory + file).readlines()
         input = []
         for line in lines:
             bid_info = line.split(':')
-            bid_info[0] = int(bid_info[0])
-            bid_info[2] = int(bid_info[2])
+            bid_info[2] = float(bid_info[2])
             input.append(bid_info)
         self.input = input
 
     def clear(self):
         self.input = []
 
-    def getTopBannerBids(self) -> list[tuple[int, int]]:
+    def getTopBannerBids(self) -> list[tuple[str, float]]:
         if not self.input:
             raise ValueError(
                 "No Input. Provide Input file or run processFile.")
@@ -27,7 +26,7 @@ class InputHandler:
                 top_bids.append((i[0], i[2]))
         return sorted(top_bids, key=lambda item: item[1], reverse=True)
 
-    def getSideBannerBids(self) -> list[tuple[int, int]]:
+    def getSideBannerBids(self) -> list[tuple[str, float]]:
         if not self.input:
             raise ValueError(
                 "No Input. Provide Input file or run processFile.")
@@ -37,7 +36,7 @@ class InputHandler:
                 side_bids.append((i[0], i[2]))
         return sorted(side_bids, key=lambda item: item[1], reverse=True)
 
-    def getBothBannerBids(self) -> list[tuple[int, int]]:
+    def getBothBannerBids(self) -> list[tuple[str, float]]:
         if not self.input:
             raise ValueError(
                 "No Input. Provide Input file or run processFile.")
@@ -47,7 +46,7 @@ class InputHandler:
                 both_bids.append((i[0], i[2]))
         return sorted(both_bids, key=lambda item: item[1], reverse=True)
 
-    def getBids(self) -> dict[str, list[tuple[int, int]]]:
+    def getBids(self) -> dict[str, list[tuple[str, float]]]:
         bids = {}
         bids['t'] = self.getTopBannerBids()
         bids['s'] = self.getSideBannerBids()
