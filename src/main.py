@@ -23,7 +23,7 @@ def main():
     args = parse_args()
     if args.cases is None or len(args.cases) == 0:
         print("No cases provided. Running all cases by default.")
-        all_cases = ['1v']
+        all_cases = [f'{i}v' for i in range(1,8)]+[f'{i}s' for i in range(1,8)]
         run(all_cases)
     else:
         run(args.cases)
