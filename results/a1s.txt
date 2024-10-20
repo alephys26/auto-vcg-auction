@@ -4,19 +4,19 @@ Auction Type: Second Bid
 Bids:
 	'Position': [('Bidder_Id', 'Bid')]
 t : 
-	('1', 150.0),
+	('1', 100.0),
 s : 
 	('3', 60.0),
 b : 
-	('2', 200.0),
+	('2', 150.0),
 
 =================================================
 Auction Winners:
 	["Bidder Id", "Bid", "Payment Made"]
 b : 
 	2,
-	200.0,
 	150.0,
+	100.0,
 
-Auction Revenue: 150.0
+Auction Revenue: 100.0
 =================================================

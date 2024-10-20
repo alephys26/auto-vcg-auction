@@ -23,8 +23,11 @@ class Processor:
         if bids['s']:
             side_bid = bids['s'][0][1]
         if side_bid + top_bid > both_bid:
-            winners = {'t': [bids['t'][0][0], bids['t'][0][1]], 's': [
-                bids['s'][0][0], bids['s'][0][1]]}
+            winners={}
+            if bids['t']:
+                winners['t']=[bids['t'][0][0], bids['t'][0][1]]
+            if bids['s']:
+                winners['s']=[bids['s'][0][0], bids['s'][0][1]]
         else:
             winners = {'b': [bids['b'][0][0], bids['b'][0][1]]}
         return winners
