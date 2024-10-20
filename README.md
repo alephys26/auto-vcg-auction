@@ -11,7 +11,7 @@ To run the simulations, run the script __main.py__ in the src folder, using the 
 cd src\
 python3 main.py
 ```
-This will run all the cases from a1.txt to a8.txt present in the folder _input_ in both VCG and Second Bid Mechanism and the results will be stored in the results folder in the format a1v.txt or a1s.txt for input a1.txt in VCG and second bid mechanism respectively.  
+This will run all the cases from a1.txt to a10.txt present in the folder _input_ in both VCG and Second Bid Mechanism and the results will be stored in the results folder in the format a1v.txt or a1s.txt for input a1.txt in VCG and second bid mechanism respectively.  
 If you want to run a specific file or case in input folder. Make the file named as a{some integer value}.txt for exampe a16.txt. Populate it with the bids in the aforementioned format. Then run it using `python3 main.py 16v` for VCG and `python3 main.py 16s` for second bid or `python3 main.py 16v 16s` for running both the cases.   
 
 > _Yash Shrivastava, B21CS079_  
